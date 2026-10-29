@@ -4,8 +4,14 @@
   var bookingUrl = meta ? meta.getAttribute('content') : '';
 
   // Load the Calendly calendar into the booking section.
+  // Until the real link is set, show a short note instead of someone else's Calendly page.
   var embed = document.querySelector('[data-calendly-inline]');
-  if (embed && bookingUrl) {
+  if (embed && bookingUrl.indexOf('PLACEHOLDER') !== -1) {
+    var note = document.createElement('p');
+    note.className = 'booking-soon';
+    note.textContent = 'Online booking is coming soon.';
+    embed.replaceWith(note);
+  } else if (embed && bookingUrl) {
     embed.classList.add('calendly-inline-widget');
     embed.setAttribute('data-url', bookingUrl);
     var widget = document.createElement('script');

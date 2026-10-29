@@ -32,15 +32,15 @@ Every piece of Tom-specific content is marked in `index.html` with an `<!-- EDIT
 | Hero text | The `<h1>` and the paragraph under it |
 | Photo | Replace `assets/tom-placeholder.svg` with a real photo (portrait, about 800x1000px). Update the `src` in the hero `<img>` if the filename changes, for example `assets/tom.jpg`. |
 | Bio | The two paragraphs in the About section |
-| Quick facts | The `<dl class="facts">` list in About (years, background, location, grades) |
-| Location | The "Where" fact in About |
+| Quick facts | The `<ul class="facts">` list in About |
+| Location | The last sentence of the bio, and the meta description |
 | Subjects and grade levels | The What I Teach section. Copy a whole `<div class="level">` block to add a group. |
-| Testimonial | The From a Parent section. Copy a whole `<figure class="testimonial">` block to add more. |
+| Testimonial | The testimonial section, just above booking. Copy a whole `<figure class="testimonial">` block to add more. |
 | Email | Footer, both the `mailto:` link and the visible text |
 | Link preview image | Replace `assets/og-image.png` (1200x630). It currently shows the placeholder name. |
 | Site address | `og:url`, `og:image`, and `twitter:image` need the full live address, for example `https://YOUR-USERNAME.github.io/REPO-NAME/assets/og-image.png`. Link previews need absolute URLs. |
 
-Until the real Calendly link is in, the booking section shows Calendly's "page not found" message. That is expected.
+Until the real Calendly link is in, the booking section shows "Online booking is coming soon." instead of the calendar. (calendly.com/PLACEHOLDER is a real account belonging to someone else, so it is never embedded.)
 
 ## Custom domain
 

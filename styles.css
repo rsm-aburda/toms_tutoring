@@ -3,23 +3,22 @@
 
 :root {
   --paper: #F1EDE4;
-  --paper-deep: #E9E3D6;
   --graphite: #24221F;
-  --muted: #57534B;
+  --muted: #5A564E;
   --ink: #2747A0;
   --ink-dark: #1B3478;
   --rule: #D8D0BF;
-  --grid: rgba(39, 71, 160, 0.08);
+  --grid: rgba(39, 71, 160, 0.07);
 
-  --serif: "Young Serif", Georgia, "Times New Roman", serif;
-  --sans: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  --step--1: 0.875rem;
+  --step--1: 0.9375rem;
   --step-0: 1.0625rem;
-  --step-1: 1.25rem;
-  --step-2: 1.625rem;
-  --step-3: clamp(1.875rem, 1.4rem + 2vw, 2.5rem);
-  --step-4: clamp(2.375rem, 1.6rem + 4vw, 4rem);
+  --step-1: 1.3125rem;
+  --step-2: clamp(1.5rem, 1.25rem + 1vw, 1.875rem);
+  --step-3: clamp(2rem, 1.6rem + 1.8vw, 2.75rem);
+  --step-4: clamp(2.625rem, 1.8rem + 4vw, 4.5rem);
 
   --gutter: 1.25rem;
   --header-h: 4rem;
@@ -63,15 +62,16 @@ h1,
 h2,
 h3 {
   font-family: var(--serif);
-  font-weight: 400;
-  line-height: 1.15;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   margin: 0;
   text-wrap: balance;
 }
 
 h2 {
   font-size: var(--step-3);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 h3 {
@@ -99,9 +99,22 @@ a:hover {
 
 .wrap {
   width: 100%;
-  max-width: 68rem;
+  max-width: 64rem;
   margin: 0 auto;
   padding: 0 var(--gutter);
+}
+
+.narrow > * {
+  max-width: 40rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .skip-link {
@@ -126,11 +139,11 @@ a:hover {
   background: var(--ink);
   color: #fff;
   font-family: var(--sans);
-  font-weight: 700;
+  font-weight: 600;
   font-size: var(--step-0);
   line-height: 1.2;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 999px;
   transition: background-color 0.15s ease;
 }
 
@@ -144,13 +157,8 @@ a:hover {
 }
 
 .btn-small {
-  padding: 0.5625rem 1rem;
+  padding: 0.5625rem 1.125rem;
   font-size: var(--step--1);
-}
-
-.btn-large {
-  padding: 1.125rem 2.25rem;
-  font-size: var(--step-1);
 }
 
 /* Header */
@@ -173,6 +181,7 @@ a:hover {
 
 .wordmark {
   font-family: var(--serif);
+  font-weight: 500;
   font-size: var(--step-1);
   color: var(--graphite);
   text-decoration: none;
@@ -182,11 +191,10 @@ a:hover {
   color: var(--graphite);
 }
 
-/* Graph paper, used only behind the hero and the closing call to action */
+/* Graph paper, used only behind the hero and the booking section */
 
 .hero,
 .cta {
-  background-color: var(--paper);
   background-image:
     linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
@@ -197,7 +205,7 @@ a:hover {
 /* Hero */
 
 .hero {
-  padding: 2.5rem 0 3.5rem;
+  padding: 2.5rem 0 3rem;
 }
 
 .hero-inner {
@@ -207,16 +215,15 @@ a:hover {
 
 .hero h1 {
   font-size: var(--step-4);
-  line-height: 1.06;
-  letter-spacing: -0.01em;
+  line-height: 1.02;
   margin-bottom: 1.25rem;
-  max-width: 14ch;
+  max-width: 15ch;
 }
 
 .lede {
   font-size: var(--step-1);
-  line-height: 1.5;
-  max-width: 34ch;
+  line-height: 1.45;
+  max-width: 30ch;
   margin-bottom: 1.75rem;
 }
 
@@ -232,7 +239,6 @@ a:hover {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 4px;
-  background: var(--paper-deep);
 }
 
 /* The sketched sine wave. It sits over the photo so it reads as drawn on the page. */
@@ -291,70 +297,43 @@ a:hover {
 /* Sections */
 
 .section {
-  padding: 3.5rem 0;
-}
-
-.section-ruled {
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  background: var(--paper-deep);
+  padding: 3rem 0;
 }
 
 /* About */
 
-.about-body {
-  max-width: 38rem;
-}
-
 .facts {
-  margin: 2rem 0 0;
-  border-top: 1px solid var(--rule);
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.facts div {
-  padding: 0.875rem 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-.facts dt {
+.facts li {
+  padding: 0.375rem 0.875rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
   font-size: var(--step--1);
   color: var(--muted);
-}
-
-.facts dd {
-  margin: 0;
 }
 
 /* What I teach */
 
 .levels {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .level h3 {
-  margin-bottom: 0.125rem;
+  margin-bottom: 0.25rem;
 }
 
-.level-grades {
-  font-size: var(--step--1);
-  color: var(--muted);
-  margin-bottom: 0.75rem;
-}
-
-.level ul {
-  list-style: none;
+.level p {
   margin: 0;
-  padding: 0;
-}
-
-.level li {
-  padding: 0.5rem 0;
-  border-top: 1px solid var(--rule);
-}
-
-.level li:last-child {
-  border-bottom: 1px solid var(--rule);
+  color: var(--muted);
+  max-width: 28ch;
 }
 
 /* How it works */
@@ -365,14 +344,14 @@ a:hover {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .steps li {
   counter-increment: step;
   display: grid;
-  grid-template-columns: 2.75rem 1fr;
-  column-gap: 1rem;
+  grid-template-columns: 2.5rem 1fr;
+  column-gap: 0.75rem;
 }
 
 .steps li::before {
@@ -385,12 +364,13 @@ a:hover {
 }
 
 .steps h3 {
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.25rem;
 }
 
 .steps p {
   margin: 0;
-  max-width: 32ch;
+  color: var(--muted);
+  max-width: 30ch;
 }
 
 /* Testimonials */
@@ -402,52 +382,46 @@ a:hover {
 
 .testimonial {
   margin: 0;
-  max-width: 40rem;
-  padding-left: 1.25rem;
-  border-left: 3px solid var(--ink);
 }
 
 .testimonial blockquote {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1rem;
 }
 
 .testimonial blockquote p {
   font-family: var(--serif);
-  font-size: var(--step-1);
-  line-height: 1.4;
+  font-style: italic;
+  font-size: var(--step-2);
+  line-height: 1.35;
   margin: 0;
 }
 
 .testimonial figcaption {
-  display: flex;
-  flex-direction: column;
-}
-
-.testimonial-name {
-  font-weight: 700;
-}
-
-.testimonial-meta {
   color: var(--muted);
   font-size: var(--step--1);
 }
 
-/* Final call to action */
+/* Booking */
 
 .cta {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
+  border-top: 1px solid var(--rule);
 }
 
 .cta h2 {
   font-size: var(--step-4);
-  line-height: 1.08;
-  max-width: 18ch;
-  margin-bottom: 1rem;
+  line-height: 1.04;
+  max-width: 16ch;
+  margin-bottom: 0.75rem;
 }
 
 .cta p {
-  max-width: 40ch;
   margin: 0;
+}
+
+.booking-soon {
+  margin-top: 2rem;
+  color: var(--muted);
 }
 
 .calendly-embed {
@@ -456,14 +430,8 @@ a:hover {
   height: 1000px;
   background: var(--paper);
   border: 1px solid var(--rule);
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
-}
-
-@media (min-width: 56rem) {
-  .calendly-embed {
-    height: 720px;
-  }
 }
 
 /* Footer */
@@ -481,6 +449,7 @@ a:hover {
 
 .footer-name {
   font-family: var(--serif);
+  font-weight: 500;
   font-size: var(--step-0);
   color: var(--graphite);
 }
@@ -507,10 +476,6 @@ a:hover {
   .footer-copy {
     margin-left: auto;
   }
-
-  .testimonial blockquote p {
-    font-size: var(--step-2);
-  }
 }
 
 /* Desktop */
@@ -521,11 +486,11 @@ a:hover {
   }
 
   .hero {
-    padding: 5rem 0 6rem;
+    padding: 5rem 0 5.5rem;
   }
 
   .hero-inner {
-    grid-template-columns: 1.25fr 1fr;
+    grid-template-columns: 1.6fr 1fr;
     align-items: center;
     gap: 4rem;
   }
@@ -536,13 +501,7 @@ a:hover {
   }
 
   .section {
-    padding: 5.5rem 0;
-  }
-
-  .about-inner {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
+    padding: 4.5rem 0;
   }
 
   .steps {
@@ -552,14 +511,19 @@ a:hover {
 
   .steps li {
     grid-template-columns: 1fr;
+    align-content: start;
   }
 
   .steps li::before {
     grid-row: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .cta {
-    padding: 7rem 0;
+    padding: 6rem 0;
+  }
+
+  .calendly-embed {
+    height: 720px;
   }
 }
