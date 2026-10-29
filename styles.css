@@ -3,6 +3,7 @@
 
 :root {
   --paper: #F1EDE4;
+  --paper-deep: #E9E3D6;
   --graphite: #24221F;
   --muted: #5A564E;
   --ink: #2747A0;
@@ -326,43 +327,70 @@ a:hover {
 /* Sections */
 
 .section {
-  padding: 3rem 0;
+  padding: 3.5rem 0;
+}
+
+.section-ruled {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-deep);
 }
 
 /* About */
 
-.facts {
-  list-style: none;
-  margin: 1.5rem 0 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.about-body {
+  max-width: 38rem;
 }
 
-.facts li {
-  padding: 0.375rem 0.875rem;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
+.facts {
+  margin: 2rem 0 0;
+  border-top: 1px solid var(--rule);
+}
+
+.facts div {
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.facts dt {
   font-size: var(--step--1);
   color: var(--muted);
+}
+
+.facts dd {
+  margin: 0;
 }
 
 /* What I teach */
 
 .levels {
   display: grid;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .level h3 {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.125rem;
 }
 
-.level p {
-  margin: 0;
+.level-grades {
+  font-size: var(--step--1);
   color: var(--muted);
-  max-width: 28ch;
+  margin-bottom: 0.75rem;
+}
+
+.level ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.level li {
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.level li:last-child {
+  border-bottom: 1px solid var(--rule);
 }
 
 /* How it works */
@@ -373,14 +401,14 @@ a:hover {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .steps li {
   counter-increment: step;
   display: grid;
-  grid-template-columns: 2.5rem 1fr;
-  column-gap: 0.75rem;
+  grid-template-columns: 2.75rem 1fr;
+  column-gap: 1rem;
 }
 
 .steps li::before {
@@ -393,13 +421,12 @@ a:hover {
 }
 
 .steps h3 {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.375rem;
 }
 
 .steps p {
   margin: 0;
-  color: var(--muted);
-  max-width: 30ch;
+  max-width: 32ch;
 }
 
 /* Testimonials */
@@ -537,7 +564,13 @@ a:hover {
   }
 
   .section {
-    padding: 4.5rem 0;
+    padding: 5rem 0;
+  }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
   }
 
   .steps {
