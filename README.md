@@ -1,4 +1,4 @@
-# Tom Harlan, Math Tutor
+# Tom Kolstad, Math Tutor
 
 A one-page static site for Tom's math tutoring. Plain HTML, CSS, and a little JavaScript. No build step.
 
@@ -27,7 +27,7 @@ Every piece of Tom-specific content is marked in `index.html` with an `<!-- EDIT
 | What | Where |
 | --- | --- |
 | **Calendly link** | `index.html`, near the top: `<meta name="booking-url" content="https://calendly.com/PLACEHOLDER">`. Change that one line. The calendar embedded in the booking section reads it automatically. |
-| Tom's name | Header wordmark, `<title>`, Open Graph and Twitter tags, footer |
+| Tom's name | Header wordmark, photo alt text, footer. The link preview title uses "Tom's Tutoring". |
 | Page description | `<meta name="description">` and the `og:description` / `twitter:description` tags |
 | Hero text | The `<h1>` and the paragraph under it |
 | Photo | Replace `assets/tom-placeholder.svg` with a real photo (portrait, about 800x1000px). Update the `src` in the hero `<img>` if the filename changes, for example `assets/tom.jpg`. |
@@ -44,10 +44,10 @@ Until the real Calendly link is in, the booking section shows "Online booking is
 
 ## Custom domain
 
-1. In **Settings > Pages > Custom domain**, enter your domain (for example `tomharlanmath.com`) and save. GitHub adds a `CNAME` file to the repo for you. You can also create it yourself: a file named `CNAME` in the root containing only the domain.
+1. In **Settings > Pages > Custom domain**, enter your domain (for example `tomkolstadmath.com`) and save. GitHub adds a `CNAME` file to the repo for you. You can also create it yourself: a file named `CNAME` in the root containing only the domain.
 2. At your domain registrar, add these DNS records.
 
-   For the root domain (`tomharlanmath.com`), four **A** records pointing to:
+   For the root domain (`tomkolstadmath.com`), four **A** records pointing to:
 
    ```
    185.199.108.153
