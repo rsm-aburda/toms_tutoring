@@ -63,4 +63,4 @@ Until the real Calendly link is in, the booking section shows "Online booking is
 
 ## Claude Code skills
 
-Drop skills into `.claude/skills/`. For example, put the apple-design skill's `SKILL.md` in `.claude/skills/apple-design/`. Claude Code picks up skills from that folder automatically. GitHub Pages does not publish folders that start with a dot, so these files won't show up on the live site.
+Skills live in `.claude/skills/<name>/SKILL.md` (the file must be named exactly `SKILL.md`). The apple-design skill is already in `.claude/skills/apple-design/`. Claude Code picks up skills from that folder automatically. GitHub Pages does not publish folders that start with a dot, so these files won't show up on the live site.

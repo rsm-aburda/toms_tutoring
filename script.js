@@ -20,6 +20,16 @@
     document.body.appendChild(widget);
   }
 
+  // Show the header's bottom edge only once content scrolls under it.
+  var header = document.querySelector('.site-header');
+  if (header) {
+    var onScroll = function () {
+      header.classList.toggle('is-scrolled', window.scrollY > 4);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   // Keep the copyright year current.
   var year = document.querySelector('[data-year]');
   if (year) year.textContent = new Date().getFullYear();

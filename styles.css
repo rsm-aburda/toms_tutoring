@@ -20,8 +20,8 @@
   --step-3: clamp(2rem, 1.6rem + 1.8vw, 2.75rem);
   --step-4: clamp(2.625rem, 1.8rem + 4vw, 4.5rem);
 
-  --gutter: 1.25rem;
-  --header-h: 4rem;
+  --gutter: max(1.25rem, env(safe-area-inset-left));
+  --header-h: 3.75rem;
 }
 
 /* Base */
@@ -34,6 +34,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
   scroll-padding-top: calc(var(--header-h) + 1rem);
 }
 
@@ -50,6 +51,7 @@ body {
   font-family: var(--sans);
   font-size: var(--step-0);
   line-height: 1.6;
+  font-optical-sizing: auto;
 }
 
 img,
@@ -64,7 +66,7 @@ h3 {
   font-family: var(--serif);
   font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
   margin: 0;
   text-wrap: balance;
 }
@@ -134,8 +136,11 @@ a:hover {
 /* Buttons */
 
 .btn {
-  display: inline-block;
-  padding: 0.875rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
   background: var(--ink);
   color: #fff;
   font-family: var(--sans);
@@ -144,7 +149,14 @@ a:hover {
   line-height: 1.2;
   text-decoration: none;
   border-radius: 999px;
-  transition: background-color 0.15s ease;
+  touch-action: manipulation;
+  transition: background-color 0.15s ease, transform 0.1s ease-out;
+}
+
+/* Feedback on press, not on release */
+.btn:active {
+  transform: scale(0.97);
+  background: var(--ink-dark);
 }
 
 .btn:hover {
@@ -157,7 +169,8 @@ a:hover {
 }
 
 .btn-small {
-  padding: 0.5625rem 1.125rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 1.125rem;
   font-size: var(--step--1);
 }
 
@@ -167,8 +180,31 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--paper);
-  border-bottom: 1px solid var(--rule);
+  padding-top: env(safe-area-inset-top);
+  background: rgba(241, 237, 228, 0.78);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
+  box-shadow: 0 1px 0 transparent;
+  transition: box-shadow 0.2s ease;
+}
+
+.site-header.is-scrolled {
+  box-shadow: 0 1px 0 var(--rule), 0 6px 16px -12px rgba(36, 34, 31, 0.35);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .site-header {
+    background: var(--paper);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .site-header {
+    background: var(--paper);
+    box-shadow: 0 1px 0 var(--graphite);
+  }
 }
 
 .header-inner {
@@ -180,6 +216,9 @@ a:hover {
 }
 
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   font-family: var(--serif);
   font-weight: 500;
   font-size: var(--step-1);
@@ -205,8 +244,37 @@ a:hover {
 /* Hero */
 
 .hero {
+  position: relative;
+  overflow: hidden;
   padding: 2.5rem 0 3rem;
 }
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-symbols {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sym {
+  position: absolute;
+  font-family: var(--serif);
+  font-style: italic;
+  line-height: 1;
+  color: var(--ink);
+  opacity: 0.16;
+}
+
+.sym-pi { top: 1.25rem; right: 6%; font-size: 4.5rem; transform: rotate(8deg); }
+.sym-root { top: 38%; right: 4%; font-size: 2.25rem; transform: rotate(-6deg); }
+.sym-sum { display: none; bottom: 8%; left: 2%; font-size: 4rem; transform: rotate(-10deg); }
+.sym-int { bottom: 4%; right: 8%; font-size: 4rem; transform: rotate(6deg); }
+.sym-sq { display: none; }
+.sym-inf { display: none; }
 
 .hero-inner {
   display: grid;
@@ -216,6 +284,7 @@ a:hover {
 .hero h1 {
   font-size: var(--step-4);
   line-height: 1.02;
+  letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
   max-width: 15ch;
 }
@@ -324,6 +393,14 @@ a:hover {
 .levels {
   display: grid;
   gap: 1.5rem;
+}
+
+.formula {
+  margin: 0 0 0.5rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--step-1);
+  color: var(--ink);
 }
 
 .level h3 {
@@ -438,7 +515,7 @@ a:hover {
 
 .site-footer {
   border-top: 1px solid var(--rule);
-  padding: 2rem 0 2.5rem;
+  padding: 2rem 0 calc(2.5rem + env(safe-area-inset-bottom));
   font-size: var(--step--1);
   color: var(--muted);
 }
@@ -488,6 +565,13 @@ a:hover {
   .hero {
     padding: 5rem 0 5.5rem;
   }
+
+  .sym-pi { top: 12%; right: auto; left: 53%; font-size: 4.5rem; }
+  .sym-root { top: 14%; right: 3%; font-size: 3rem; }
+  .sym-sum { display: block; }
+  .sym-int { bottom: 6%; right: 36%; font-size: 5rem; }
+  .sym-sq { display: block; top: 52%; left: 54%; font-size: 2.75rem; transform: rotate(-8deg); }
+  .sym-inf { display: block; bottom: 10%; right: 4%; font-size: 3rem; transform: rotate(4deg); }
 
   .hero-inner {
     grid-template-columns: 1.6fr 1fr;
