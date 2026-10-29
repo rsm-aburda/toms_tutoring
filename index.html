@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- EDIT: Calendly link. This is the ONLY place it lives. The booking calendar at the bottom of the page reads it. -->
+  <meta name="booking-url" content="https://calendly.com/PLACEHOLDER">
+
+  <!-- EDIT: page title and description (shown in search results and link previews) -->
+  <title>Tom Harlan, Math Tutor</title>
+  <meta name="description" content="One-on-one math tutoring for middle and high school students, online or in person in North County San Diego. Pre-Algebra through Calculus, plus SAT and ACT math.">
+
+  <!-- Link previews (iMessage, Facebook, Slack, etc.) -->
+  <!-- EDIT: og:url should be the live site address once it is published -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tom Harlan, Math Tutor">
+  <meta property="og:description" content="One-on-one math tutoring for middle and high school students, online or in person.">
+  <meta property="og:image" content="https://YOUR-USERNAME.github.io/toms_tutoring/assets/og-image.png">
+  <meta property="og:url" content="https://YOUR-USERNAME.github.io/toms_tutoring/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tom Harlan, Math Tutor">
+  <meta name="twitter:description" content="One-on-one math tutoring for middle and high school students, online or in person.">
+  <meta name="twitter:image" content="https://YOUR-USERNAME.github.io/toms_tutoring/assets/og-image.png">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
+  <meta name="theme-color" content="#F1EDE4">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <!-- EDIT: Tom's name -->
+      <a class="wordmark" href="#top">Tom Harlan</a>
+      <a class="btn btn-small" href="#book">Book a Session</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <h1 id="hero-title">Math tutoring for students who are tired of feeling stuck.</h1>
+          <!-- EDIT: one or two sentences on who Tom helps -->
+          <p class="lede">I'm Tom. I work one on one with middle and high school students, online or in person, and help them understand the math instead of just getting through the homework.</p>
+          <a class="btn" href="#book">Book a Session</a>
+        </div>
+
+        <figure class="hero-photo">
+          <!-- EDIT: replace with a real photo of Tom. Portrait orientation (4:5) works best, about 800x1000px. -->
+          <img src="assets/tom-placeholder.svg" alt="Tom Harlan, math tutor" width="400" height="500">
+          <!-- Hand-drawn sine wave sketched over the photo -->
+          <svg class="sketch" viewBox="0 0 400 500" aria-hidden="true" focusable="false">
+            <path class="sketch-axis" pathLength="1" d="M14 401 C 120 399, 260 402, 392 400" />
+            <path class="sketch-axis" pathLength="1" d="M40 476 C 41 420, 39 330, 40 262" />
+            <path class="sketch-curve" pathLength="1" d="M40 400 Q 84 336 128 400 T 216 400 T 304 400 T 392 400" />
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap about-inner">
+        <h2 id="about-title">About me</h2>
+        <div class="about-body">
+          <!-- EDIT: Tom's bio -->
+          <p>I taught high school math for six years before I started tutoring full time. The thing I noticed in the classroom is that most students who say they're "bad at math" are really missing one or two ideas from a year or two back. Once we find those gaps and fill them, the current material starts to click.</p>
+          <p>My sessions are calm and patient. We work problems together, and I make sure your student can explain each step back to me before we move on. When I'm not tutoring, I'm usually in the water somewhere between Oceanside and Cardiff.</p>
+
+          <!-- EDIT: quick facts -->
+          <dl class="facts">
+            <div>
+              <dt>Tutoring since</dt>
+              <dd>2016</dd>
+            </div>
+            <div>
+              <dt>Background</dt>
+              <dd>B.S. in Mathematics, former high school teacher</dd>
+            </div>
+            <div>
+              <dt>Where</dt>
+              <!-- EDIT: location -->
+              <dd>Online over Zoom, or in person in North County San Diego</dd>
+            </div>
+            <div>
+              <dt>Students</dt>
+              <dd>Grades 6 through 12</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I TEACH -->
+    <section class="section section-ruled" id="teach" aria-labelledby="teach-title">
+      <div class="wrap">
+        <h2 id="teach-title">What I teach</h2>
+        <!-- EDIT: grade levels and subjects. Copy a whole <div class="level"> block to add a group. -->
+        <div class="levels">
+          <div class="level">
+            <h3>Middle school</h3>
+            <p class="level-grades">Grades 6 to 8</p>
+            <ul>
+              <li>Pre-Algebra</li>
+              <li>Algebra 1</li>
+            </ul>
+          </div>
+          <div class="level">
+            <h3>High school</h3>
+            <p class="level-grades">Grades 9 to 12</p>
+            <ul>
+              <li>Geometry</li>
+              <li>Algebra 2</li>
+              <li>Precalculus</li>
+              <li>Calculus</li>
+              <li>Statistics</li>
+            </ul>
+          </div>
+          <div class="level">
+            <h3>Test prep</h3>
+            <p class="level-grades">Juniors and seniors</p>
+            <ul>
+              <li>SAT Math</li>
+              <li>ACT Math</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <h2 id="how-title">How it works</h2>
+        <ol class="steps">
+          <li>
+            <h3>Book a time</h3>
+            <p>Pick a slot that works for you on my calendar. Add a note about the class and what's giving your student trouble.</p>
+          </li>
+          <li>
+            <h3>Meet for your session</h3>
+            <p>We meet online or in person for an hour. Bring homework, a test that went badly, or just questions.</p>
+          </li>
+          <li>
+            <h3>Keep making progress</h3>
+            <p>Most students meet once a week. You'll get a short summary after each session so you can see how things are going.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section section-ruled" id="kind-words" aria-labelledby="kind-words-title">
+      <div class="wrap">
+        <h2 id="kind-words-title">From a parent</h2>
+        <!-- EDIT: testimonials. To add more, copy a whole <figure class="testimonial"> block. -->
+        <div class="testimonials">
+          <figure class="testimonial">
+            <blockquote>
+              <p>My daughter went from dreading Algebra 2 to asking if she could add a second session before finals. Tom never made her feel rushed or dumb for asking. Her grade went from a C to an A minus, but honestly the bigger change is that she stopped saying she hates math.</p>
+            </blockquote>
+            <figcaption>
+              <span class="testimonial-name">Maria L.</span>
+              <span class="testimonial-meta">Parent of a 10th grader</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="cta" id="book" aria-labelledby="book-title">
+      <div class="wrap">
+        <h2 id="book-title">Let's find a time that works.</h2>
+        <p>Pick a time below. The first session is a good way to see if we're a fit, with no long-term commitment.</p>
+
+        <!-- Calendly inline embed. script.js fills in the link from the booking-url meta tag
+             at the top of this file, so you never need to paste the link here. -->
+        <div class="calendly-embed" data-calendly-inline></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <!-- EDIT: name and contact email -->
+      <p class="footer-name">Tom Harlan, Math Tutor</p>
+      <p><a href="mailto:tom@example.com">tom@example.com</a></p>
+      <p class="footer-copy">&copy; <span data-year>2026</span> Tom Harlan</p>
+    </div>
+  </footer>
+</body>
+</html>

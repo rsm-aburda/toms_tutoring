@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <title>Photo placeholder</title>
+  <rect width="400" height="500" fill="#E2DACA"/>
+  <circle cx="200" cy="190" r="72" fill="#CFC5B1"/>
+  <path d="M60 500 C 66 360, 130 300, 200 300 C 270 300, 334 360, 340 500 Z" fill="#CFC5B1"/>
+  <text x="200" y="66" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#8A8272">Photo of Tom goes here</text>
+</svg>
